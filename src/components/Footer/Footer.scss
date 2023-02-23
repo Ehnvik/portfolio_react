@@ -1,0 +1,94 @@
+@use "../../forward/index" as c;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: c.$secondaryBgColor;
+  color: c.$secondaryColor;
+  text-shadow: 2px 2px 4px c.$primaryTextShadowColor;
+  font-size: 20px;
+  height: 70vh;
+  &:last-child {
+    .weather-icon {
+      height: 40px;
+    }
+    @include c.small {
+      flex-direction: row;
+      height: 23vh;
+      justify-content: space-around;
+      align-items: start;
+      margin-top: auto;
+      font-size: 18px;
+      animation: footer-load var(--footer-load-time) ease-in;
+    }
+    @include c.medium {
+      font-size: 20px;
+    }
+    @include c.large {
+      font-size: 22px;
+    }
+  }
+
+  &__list {
+    padding-left: 0;
+    align-items: center;
+    list-style: none;
+    width: 60%;
+    @include c.small {
+      margin-top: 4%;
+    }
+    @include c.medium {
+      margin-top: 3%;
+    }
+    &__link {
+      padding-bottom: 15px;
+      font-family: c.$titleFont;
+      @include c.small {
+        text-align: start;
+        padding-left: 15%;
+        animation-name: footer-load;
+        animation-duration: var(--footer-load-time);
+        animation-timing-function: ease-in;
+        animation-delay: var(--footer-time);
+        animation-fill-mode: forwards;
+        transform: scale(0);
+
+        @keyframes footer-load {
+          0% {
+            transform: translateY(100%);
+          }
+
+          100% {
+            transform: translateY(0);
+          }
+        }
+      }
+      @include c.medium {
+        padding-left: 20%;
+      }
+      &__anchor {
+        color: c.$secondaryColor;
+        text-shadow: 2px 2px 4px c.$primaryTextShadowColor;
+        text-decoration: none;
+        &--cv {
+          padding-right: 10px;
+          font-size: 25px;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+        &--linkedin {
+          padding-right: 14px;
+          font-size: 25px;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+}
