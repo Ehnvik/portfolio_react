@@ -10,9 +10,9 @@ function App() {
       <header>
         <Nav></Nav>
       </header>
-      <main>
+      <>
         <Outlet></Outlet>
-      </main>
+      </>
       <footer className="footer">
         <Footer></Footer>
       </footer>

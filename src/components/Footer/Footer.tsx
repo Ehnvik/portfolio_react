@@ -31,6 +31,7 @@ export const Footer = () => {
           <a
             className="footer__list__link__anchor"
             target="_blank"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/gustav-ehnvik-993a9090/">
             <i
               className="fa fa-linkedin footer__list__link__anchor--linkedin"
