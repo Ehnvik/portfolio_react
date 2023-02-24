@@ -1,0 +1,98 @@
+@use "../../forward/index" as c;
+
+// body {
+//   background-image: url("/src/assets/img/project-background-img.jpg");
+//   background-position: center;
+//   background-size: cover;
+//   @include c.small {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  color: c.$primaryColor;
+  margin-bottom: 25px;
+  @include c.small {
+    animation: projects-load var(--projects-load-time) ease-in;
+  }
+  @include c.medium {
+    justify-content: center;
+  }
+  &__repo-box {
+    font-family: c.$titleFont;
+    width: 100%;
+    border-radius: 18px;
+    margin: 25px 25px 0px 25px;
+    box-shadow: 1px 0px 20px rgba(151, 149, 149, 0.8),
+      0px 10px 5px rgba(151, 149, 149, 0.1);
+    @include c.small {
+      //   background-image: url("/src/assets/img/project-background-img.jpg");
+      background-position: center;
+      background-size: cover;
+      animation-name: projects-load;
+      animation-duration: var(--projects-load-time);
+      animation-timing-function: ease-in;
+      animation-delay: var(--projects-time);
+      animation-fill-mode: forwards;
+      transform: scale(0);
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        box-shadow: 1px 0px 40px rgba(92, 126, 150),
+          30px 10px 5px rgba(151, 149, 149, 0.1);
+      }
+      @keyframes projects-load {
+        0% {
+          transform: scale(0);
+        }
+
+        90% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    @include c.medium {
+      width: 35%;
+    }
+    &__title {
+      font-size: 26px;
+      font-weight: 400;
+      text-align: center;
+    }
+    &__date {
+      padding-left: 10px;
+      @include c.xxlarge {
+        padding-top: 20px;
+      }
+    }
+    &__description {
+      font-size: 16px;
+      padding: 0px 10px;
+      font-family: c.$primaryFont;
+    }
+    &__topics {
+      font-size: 18px;
+      padding-left: 10px;
+    }
+    &__link {
+      font-weight: 400;
+      font-size: 20px;
+      padding-left: 10px;
+      color: c.$primaryColor;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@
   &__section {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     height: 100%;
     @include c.small {
       flex-direction: row;
